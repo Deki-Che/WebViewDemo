@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnE-Za-ATg">
+                                <rect key="frame" x="4" y="20" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="gobackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GS9-0J-fUs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C7R-VE-xV1">
+                                <rect key="frame" x="4" y="66" width="311" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beZ-eK-gcF">
+                                <rect key="frame" x="84" y="20" width="51" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Foward"/>
+                                <connections>
+                                    <action selector="foward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GAy-IX-N3M"/>
+                                    <action selector="gobackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ml8-EM-zCr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bc-we-tnu">
+                                <rect key="frame" x="183" y="20" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukf-QE-ZFF"/>
+                                    <action selector="gobackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R63-kE-A3b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypu-Q6-Y19">
+                                <rect key="frame" x="242" y="20" width="62" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Reload"/>
+                                <connections>
+                                    <action selector="gobackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5TE-06-g65"/>
+                                    <action selector="reloadbtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vgd-Bk-6Ux"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-dN-oTj">
+                                <rect key="frame" x="0.0" y="115" width="320" height="453"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="jdF-8u-w9G"/>
+                                    <constraint firstAttribute="height" constant="453" id="lZf-a6-GvJ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jdF-8u-w9G"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="sKu-AN-UvF"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eW5-dN-oTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="11b-im-MZR"/>
+                            <constraint firstItem="7Bc-we-tnu" firstAttribute="leading" secondItem="beZ-eK-gcF" secondAttribute="trailing" constant="48" id="5DO-Ez-Drv"/>
+                            <constraint firstItem="C7R-VE-xV1" firstAttribute="top" secondItem="OnE-Za-ATg" secondAttribute="bottom" constant="16" id="5gg-Z9-EUG"/>
+                            <constraint firstItem="C7R-VE-xV1" firstAttribute="top" secondItem="beZ-eK-gcF" secondAttribute="bottom" constant="16" id="6Ne-Bj-cFo"/>
+                            <constraint firstItem="OnE-Za-ATg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9LL-iy-hYw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eW5-dN-oTj" secondAttribute="bottom" id="Af4-x8-H2a"/>
+                            <constraint firstItem="C7R-VE-xV1" firstAttribute="top" secondItem="ypu-Q6-Y19" secondAttribute="bottom" constant="16" id="Ieh-O5-1FB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eW5-dN-oTj" secondAttribute="trailing" id="J8V-oe-v3e"/>
+                            <constraint firstItem="ypu-Q6-Y19" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ljw-Yr-m2F"/>
+                            <constraint firstItem="OnE-Za-ATg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="MNJ-8U-AVu"/>
+                            <constraint firstItem="beZ-eK-gcF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ocl-JK-hfA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eW5-dN-oTj" secondAttribute="trailing" constant="-20" id="PZb-yG-U5G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C7R-VE-xV1" secondAttribute="trailing" constant="-11" id="RKG-sJ-nYQ"/>
+                            <constraint firstItem="C7R-VE-xV1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="UrJ-iH-0lb"/>
+                            <constraint firstItem="eW5-dN-oTj" firstAttribute="top" secondItem="C7R-VE-xV1" secondAttribute="bottom" constant="19" id="Vl6-dm-SYI"/>
+                            <constraint firstItem="eW5-dN-oTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ZBF-1B-jZf"/>
+                            <constraint firstItem="eW5-dN-oTj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="95" id="bbR-cB-Os9"/>
+                            <constraint firstItem="7Bc-we-tnu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dwL-E9-YGo"/>
+                            <constraint firstItem="ypu-Q6-Y19" firstAttribute="leading" secondItem="7Bc-we-tnu" secondAttribute="trailing" constant="29" id="lyT-aP-VO4"/>
+                            <constraint firstItem="C7R-VE-xV1" firstAttribute="top" secondItem="7Bc-we-tnu" secondAttribute="bottom" constant="16" id="qCQ-ay-96Q"/>
+                            <constraint firstItem="beZ-eK-gcF" firstAttribute="leading" secondItem="OnE-Za-ATg" secondAttribute="trailing" constant="46" id="skD-Lv-xCf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ypu-Q6-Y19" secondAttribute="trailing" id="zFX-CN-K1p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9LL-iy-hYw"/>
+                                <exclude reference="Ocl-JK-hfA"/>
+                                <exclude reference="11b-im-MZR"/>
+                                <exclude reference="J8V-oe-v3e"/>
+                                <exclude reference="dwL-E9-YGo"/>
+                                <exclude reference="Ljw-Yr-m2F"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textField1" destination="C7R-VE-xV1" id="OrM-na-PLt"/>
+                        <outlet property="webview1" destination="eW5-dN-oTj" id="L07-Ls-FFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219" y="327"/>
+        </scene>
+    </scenes>
+</document>
